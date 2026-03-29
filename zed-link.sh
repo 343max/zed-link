@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WORKSPACE="$(cd "${1:-$PWD}" && pwd -P)"
+WORKSPACE="$(realpath "${1:-$PWD}")"
 if [ -n "$ZEDLINK_HOST" ]; then
     HOSTNAME="$ZEDLINK_HOST"
 elif [ -n "$SSH_CONNECTION" ]; then
